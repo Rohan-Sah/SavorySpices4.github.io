@@ -1,9 +1,13 @@
 
-
-
-
-
 const options = {method: 'GET'};
+
+fetch('https://www.dev.readychatai.com/messages_json', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+
+
+// const options = {method: 'GET'};
 // const options = {
 // 	method: 'GET',
 // 	headers: {
@@ -24,12 +28,12 @@ const options = {method: 'GET'};
 //   https://www.dev.readychatai.com/messages_json
 
 
-fetch('https://www.dev.readychatai.com/messages_json', options)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(response => console.log(response))
-  .catch(err => console.error('Fetch error:', err));
+// fetch('https://www.dev.readychatai.com/messages_json', options)
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error('Network response was not ok');
+//     }
+//     return response.json();
+//   })
+//   .then(response => console.log(response))
+//   .catch(err => console.error('Fetch error:', err));
